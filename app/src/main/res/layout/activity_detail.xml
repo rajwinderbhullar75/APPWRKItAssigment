@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.rsb.appwrkitassigment.R" />
+
         <variable
             name="viewModel"
             type="com.rsb.appwrkitassigment.viewmodel.DetailViewModel" />
@@ -58,8 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/list_item_border"
-                android:onClick="@{() -> viewModel.markAsCompleted()}"
-                android:text="Mark as completed"
+                android:onClick="@{() -> viewModel.markAsCompletedOrPending()}"
+                android:text='@{viewModel.item.status.equals("Completed") ? R.string.mark_as_pending : R.string.mark_as_completed }'
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/itemDescriptionTextView" />

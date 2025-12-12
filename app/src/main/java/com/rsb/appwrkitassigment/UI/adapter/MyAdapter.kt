@@ -27,15 +27,15 @@ class MyAdapter(private val mainActivity: MainActivity, private val dataSet: Lis
         val item = dataSet[position]
         holder.bind(item)
 
-        if (item.status != "Completed") {
+//        if (item.status != "Completed") {
             holder.itemView.setOnClickListener {
                 val intent = Intent(holder.itemView.context, DetailActivity::class.java)
                 intent.putExtra(DetailActivity.EXTRA_ITEM_ID, item.id)
                 mainActivity.getUpdatedItem.launch(intent)
             }
-        } else {
-            holder.itemView.setOnClickListener(null)
-        }
+//        } else {
+//            holder.itemView.setOnClickListener(null)
+//        }
     }
 
     override fun getItemCount() = dataSet.size

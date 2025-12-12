@@ -28,10 +28,18 @@ class DetailViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun markAsCompleted() {
+    fun markAsCompletedOrPending() {
         val currentItem = _item.value
+
         if (currentItem != null && currentItem.status == "Pending") {
             val updatedItem = currentItem.copy(status = "Completed")
+            viewModelScope.launch {
+                preferenceDataStore.updateItem(updatedItem)
+                _item.value = updatedItem
+                _isStatusUpdated.value = true
+            }
+        } else {
+            val updatedItem = currentItem!!.copy(status = "Pending")
             viewModelScope.launch {
                 preferenceDataStore.updateItem(updatedItem)
                 _item.value = updatedItem

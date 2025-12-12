@@ -10,12 +10,13 @@
             type="com.rsb.appwrkitassigment.model.ListItemModel" />
     </data>
 
+<!--    android:alpha="@{model.status.equals(`Completed`) ? 0.5f : 1.0f}"-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/list_item_border"
-        android:alpha="@{model.status.equals(`Completed`) ? 0.5f : 1.0f}"
         android:padding="16dp">
 
         <TextView

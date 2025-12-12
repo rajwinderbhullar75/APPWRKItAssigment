@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.rsb.appwrkitassigment.R
 import com.rsb.appwrkitassigment.databinding.ActivityDetailBinding
 import com.rsb.appwrkitassigment.viewmodel.DetailViewModel
 

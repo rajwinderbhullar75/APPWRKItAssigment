@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">APPWRKItAssigment</string>
     <string name="mark_as_completed">Mark as completed</string>
+    <string name="mark_as_pending">Mark as pending</string>
 </resources>
